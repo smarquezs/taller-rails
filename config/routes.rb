@@ -1,9 +1,33 @@
 Myapp::Application.routes.draw do
-  get "forms/for_get"
+  resources :pruebas
 
-  get "forms/for_post"
+
+  #get "sessions/new"
+
+  #get "sessions/create"
+
+  #get "sessions/destroy"
+
+  get "home/index"
+
+  #get "users/new"
+
+  #get "new/create"
+
+  #get "users/create"
+
+  #get "forms/for_get"
+
+  #get "forms/for_post"
+
+
+  match "/login", to: "sessions#new", via: "get"
+  match "/logout", to: "sessions#destriy", via: "delete"
+  match "signup", to: "users#new", via: "get"
 
   resources :posts
+  resources :users
+  resources :sessions
 
 
   # The priority is based upon order of creation:
@@ -55,7 +79,7 @@ Myapp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root to: 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
