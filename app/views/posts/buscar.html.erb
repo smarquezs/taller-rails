@@ -1,0 +1,55 @@
+<!-- Jquery para buscar por ajax-->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#btn_buscar').click(function(event) {
+     var user = $('#user').val();
+
+     var link = "/buscar/"+user;
+     $.getJSON(link, function(data) {
+        if (data != '') {
+          $('#body-ajax').html("");
+          $('#msg-error').addClass('hide');
+          $.each(data, function(i, post) {
+            $('#table-ajax').removeClass('hide');
+            $('#body-ajax').append("\
+              <tr>\
+                <td>"+post.id+"</td>\
+                <td>"+post.title +"</td>\
+                <td>"+post.body +"</td>\
+              </tr>\
+            ")
+          });
+        }else{
+          $('#table-ajax').addClass('hide');
+          $('#msg-error').removeClass('hide')
+        }
+     });
+
+    });
+  });
+</script>
+
+<!-- Formulario -->
+<h4>Busqueda de posts por usuario</h4>
+<%= form_tag do %>
+  <%= label_tag "user", "Usuario"%>
+  <%= text_field_tag "user", "", class: "input-medium"%><br>
+  <%= submit_tag "Buscar posts", type: "button", id: "btn_buscar", class: "btn btn-primary"%>
+<% end %>
+
+<!-- Respuesta por ajax -->
+<div id="via-ajax">
+  <div class="hide alert alert-error" id="msg-error">
+  <strong>No hay datos para mostrar</strong>
+  </div>
+  <table id="table-ajax" class="hide table table-hover">
+    <thead>
+      <th>Id</th>
+      <th>Titulo</th>
+      <th>Body</th>
+    </thead>
+    <tbody id="body-ajax">
+
+    </tbody>
+  </table>
+</div>

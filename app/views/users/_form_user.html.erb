@@ -5,7 +5,6 @@
 <%= form_for @usuario do |f| -%>
   <% if @usuario.errors.any? %>
     <div class="error_explanation">
-    <h2>Errores al procesar el formulario</h2>
       <ul>
         <% @usuario.errors.full_messages.each do |msg| %>
           <li><%= msg%> </li>
@@ -13,6 +12,10 @@
       </ul>
     </div>
   <% end %>
+  <p>
+    <%= f.label :user, "Usuario" %>
+    <%= f.text_field :user %>
+  </p>
   <p>
     <%= f.label :email, "Email" %>
     <%= f.text_field :email %>
@@ -24,11 +27,11 @@
   </p>
 
   <p>
-    <%= f.label :password_confirmation, "Password _Confirmation" %>
+    <%= f.label :password_confirmation, "Confirmar password" %>
     <%= f.password_field :password_confirmation %>
   </p>
 
   <p>
-    <%= f.submit "Submit", class: "btn btn-success" %>
+    <%= f.submit "Crear usuario", class: "btn btn-success" %>
   </p>
 <% end %>

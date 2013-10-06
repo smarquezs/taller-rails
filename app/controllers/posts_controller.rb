@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
    before_filter :authenticate_user!
+
   # GET /posts
   # GET /posts.json
 
@@ -42,13 +43,18 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+
     @post = Post.new(params[:post])
+
+    @post.user_id = current_user.id.to_s
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        flash[:success] = "El post ha sido creado correctamente"
+        format.html { redirect_to @post}
         format.json { render json: @post, status: :created, location: @post }
       else
+        flash[:error] = "Problemas al grabar el post"
         format.html { render action: "new" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
@@ -81,5 +87,13 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url }
       format.json { head :no_content }
     end
+  end
+
+  def buscar
+    if !params[:user].nil?
+      posts = Post.select("posts.id,posts.title, posts.body").joins(:user).where("users.user = ? ", params[:user].downcase)
+      render json: posts
+    end
+
   end
 end

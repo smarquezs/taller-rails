@@ -1,9 +1,8 @@
-<% if current_user %>
-  <h1>New post</h1>
-  <%= render 'form' %>
+<h3>New post</h3>
+<%= render 'form' %>
 
-  <%= link_to 'Back', posts_path %>
-<% else %>
-  <% flash[:error] = "Para usar está página debe logearse" %>
-<% end %>
+<%= link_to 'Back', posts_path %>
+
+
+
 

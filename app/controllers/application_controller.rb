@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     if current_user.nil?
-      flash[:error] = "Para usar esta aplicación debe logearse"
+      flash[:error] = "Para usar esta aplicación debe logearse en el sistema"
       redirect_to sign_in_path
     end
   end

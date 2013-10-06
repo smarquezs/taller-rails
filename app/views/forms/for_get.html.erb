@@ -1,8 +1,0 @@
-<h1>Ingrese datos del usuario</h1>
-
-<%=form_tag({:controller => 'forms', :action => 'for_get', :class =>'form-horizontal'}, :method =>'get') do %>
-  <%= label_tag 'txt_codigo', 'Código usuario' %>
-  <%= text_field_tag 'txt_codigo', nil, class: 'input-mini' %>
-  <%= submit_tag 'Enviar', class: 'btn btn-large btn-success' %>
-
-<% end %>

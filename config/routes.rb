@@ -1,13 +1,15 @@
 Myapp::Application.routes.draw do
-  resources :pruebas
-
-
   get "home/index"
+
+
 
 
   match "sign_in", to: "sessions#new", via: "get"
   match "sign_out", to: "sessions#destroy", via: "get"
   match "sign_up", to: "users#new", via: "get"
+
+  match "buscar", to: "posts#buscar", via: "get"
+  match "buscar/:user", to: "posts#buscar", via: "get"
 
 
   resources :posts
