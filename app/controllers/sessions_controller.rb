@@ -1,3 +1,4 @@
+#encoding: utf-8
 class SessionsController < ApplicationController
   def new
   end
@@ -17,5 +18,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:user_id] = nil
+    flash[:warning] = "La sesión ha sido cerrada"
+    redirect_to root_url
   end
 end

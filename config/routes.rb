@@ -5,9 +5,10 @@ Myapp::Application.routes.draw do
   get "home/index"
 
 
-  match "/login", to: "sessions#new", via: "get"
-  match "/logout", to: "sessions#destriy", via: "delete"
-  match "signup", to: "users#new", via: "get"
+  match "sign_in", to: "sessions#new", via: "get"
+  match "sign_out", to: "sessions#destroy", via: "get"
+  match "sign_up", to: "users#new", via: "get"
+
 
   resources :posts
   resources :users
