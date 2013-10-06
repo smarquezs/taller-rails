@@ -2,23 +2,7 @@ Myapp::Application.routes.draw do
   resources :pruebas
 
 
-  #get "sessions/new"
-
-  #get "sessions/create"
-
-  #get "sessions/destroy"
-
   get "home/index"
-
-  #get "users/new"
-
-  #get "new/create"
-
-  #get "users/create"
-
-  #get "forms/for_get"
-
-  #get "forms/for_post"
 
 
   match "/login", to: "sessions#new", via: "get"
@@ -81,7 +65,6 @@ Myapp::Application.routes.draw do
   # just remember to delete public/index.html.
   root to: 'home#index'
 
-  # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
