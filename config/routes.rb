@@ -1,4 +1,7 @@
 Myapp::Application.routes.draw do
+  resources :pruebas
+
+
   get "home/index"
 
 
