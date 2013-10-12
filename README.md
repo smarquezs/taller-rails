@@ -20,7 +20,8 @@ Blog: http://fernando-gaitan.com.ar/ruby-on-rails-parte-16-relaciones-en-los-mod
 Youtube: http://www.youtube.com/results?search_query=ruby+on+rails+tutorial+codigofacilito
 
 Gemas utilizadas en esta aplicación
-# To use ActiveModel has_secure_password
+
+Para encriptación
 gem 'bcrypt-ruby', '~> 3.0.0'
 Se debe crear una tabla con email, password_digest (password_digest es el campo que guardará las pasword encriptada)
 
@@ -48,7 +49,7 @@ Para migrar la base de datos ejecute en la consola rake db:migrate
 
 Si desean empezar en este mundo de Rails, puden empezar con el getting started que se encuentra en: http://guides.rubyonrails.org/getting_started.html cuyo tutorial comienza desde la instalación del frameworks.
 
-si desean pronar esta sencilla aplicación, descargan la aplicación, teniendo instalado ruby y rails, lo descomprimen un una carpeta levantan el servidor (dentro de la carpeta de la aplicación) ejecutanto rails s y luego van a la url http://localhost:3000/sign_in
+si desean probar esta sencilla aplicación, descargan la aplicación, teniendo instalado ruby y rails, lo descomprimen un una carpeta levantan el servidor (dentro de la carpeta de la aplicación) ejecutanto rails s y luego van a la url http://localhost:3000/sign_in
 
 email: admin@admin.cl
 pass: 123qwe
