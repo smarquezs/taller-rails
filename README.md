@@ -25,7 +25,7 @@ Para encriptación
 gem 'bcrypt-ruby', '~> 3.0.0'
 Se debe crear una tabla con email, password_digest (password_digest es el campo que guardará las pasword encriptada)
 
-gem 'jquery-rails', para la utilización de ajax, em este taller se crea una aplicaicón simple para buscar posts asociados a un usuario, para esto de guardó el user_id dentro de la tabla post y se obtiene de la sessión cuand el usuario se autentifica en el sistema.
+gem 'jquery-rails', para la utilización de ajax, em este taller se crea una aplicaicón simple para buscar posts asociados a un usuario, para esto de guardó el user_id dentro de la tabla post y se obtiene de la sessión cuando el usuario se autentifica en el sistema.
 
 En el controlador sessions_controller se crea (log in) y se destruye (log out) la sesión
 
