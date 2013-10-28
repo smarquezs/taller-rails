@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   #validates :titulo, presence: "el campo titulo no puede estar vacio"
-  validates_presence_of :titulo
+  validates_presence_of :title
   #validates :title,
   # :presence => {
   #    :message => "El titulo no puede estar vacio"
